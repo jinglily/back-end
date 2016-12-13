@@ -29,6 +29,7 @@ app.use(cors());
 app.get('/users', function (req, res) {
 
   User.find().exec(function(err, users) {
+    if(err) return console.log(err);
     res.json({users})
   });
 });
